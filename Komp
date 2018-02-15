@@ -1,0 +1,58 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            for (; ; )
+            {
+                Przywitanie();
+                Wiek();
+                Ustawienia();
+
+            }
+        }
+
+        private static void Ustawienia()
+        {
+            Console.ReadKey();
+            Console.Clear();
+            Console.ResetColor();
+        }
+
+        private static void Wiek()
+        {
+            Console.WriteLine("Ile masz lat?");
+            int lat;
+            bool result = int.TryParse(Console.ReadLine(), out lat);
+
+            if (lat >= 18)
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("Jestes pełnoletni");
+            }
+            else if (result == false)
+            {
+                Console.WriteLine("Niepoprawne dane");
+            }
+            else
+            {
+                Console.WriteLine("Jestes niepelnoletni");
+            }
+        }
+
+        private static void Przywitanie()
+        {
+            Console.WriteLine("Podaj imię");
+            string imie = Console.ReadLine();
+
+            Console.WriteLine("witaj, " + imie);
+        }
+    }
+}
